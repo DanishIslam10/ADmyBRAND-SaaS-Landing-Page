@@ -21,7 +21,7 @@ export default function Hero() {
             className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-tight tracking-tight"
           >
             Power Up Your Campaigns with
-            <span className="block bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 via-red-500 to-pink-500">
+            <span className="block bg-clip-text text-transparent bg-gradient-to-br from-[#ff8a05] via-[#ff5478] to-[#ff00c6]">
               AD MY BRAND
             </span>
           </motion.h1>
@@ -39,12 +39,12 @@ export default function Hero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.5 }}
-            className="flex md:flex-col sm:flex-row gap-4 mt-6 justify-center md:justify-start"
+            className="flex sm:flex-row gap-4 mt-6 justify-center md:justify-start"
           >
             {/* Start Free Trial Button */}
             <a href="#_" className="w-fit relative p-0.5 inline-flex items-center justify-center font-bold overflow-hidden group rounded-md">
               <span className="w-full h-full bg-gradient-to-br from-[#ff8a05] via-[#ff5478] to-[#ff00c6] absolute transition-all duration-500 ease-out group-hover:from-[#ff00c6] group-hover:via-[#ff5478] group-hover:to-[#ff8a05]" />
-              <span className="relative px-6 py-3 bg-gray-900 rounded-md transition-all duration-500 ease-out group-hover:bg-opacity-0">
+              <span className="relative px-6 py-3 bg-gray-900 bg-gradient-to-br hover:from-[#ff8a05] hover:via-[#ff5478] hover:to-[#ff00c6] rounded-md transition-all duration-500 ease-out group-hover:bg-opacity-0">
                 <span className="relative text-white">Start Free Trial</span>
               </span>
             </a>
