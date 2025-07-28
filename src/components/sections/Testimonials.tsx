@@ -57,7 +57,7 @@ export default function TestimonialCarousel() {
                 alt={testimonials[current].name}
                 className="w-20 h-20 rounded-full object-cover border-4 border-indigo-500"
               />
-              <p className="text-lg text-gray-200 italic">"{testimonials[current].quote}"</p>
+              <p className="text-lg text-gray-200 italic">&ldquo;{testimonials[current].quote}&rdquo;</p>
               <div className="text-indigo-400 font-semibold mt-4">{testimonials[current].name}</div>
               <div className="text-sm text-gray-400">{testimonials[current].position}</div>
             </div>
