@@ -41,7 +41,7 @@ export default function Header() {
 
                 {/* Mobile Menu Icon */}
                 <div className="md:hidden">
-                    <button className="text-[white] focus:outline-none text-2xl">☰</button>
+                    <button className="text-[#393838] focus:outline-none text-2xl">☰</button>
                 </div>
             </div>
         </header>
