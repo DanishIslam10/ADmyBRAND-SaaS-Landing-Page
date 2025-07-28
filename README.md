@@ -20,18 +20,56 @@ A modern, responsive SaaS landing page built using **Next.js** and **Tailwind CS
 ## 📁 Project Structure
 
 ```
-/saas-landing
-├── components/
-│   └── Header.jsx        # Reusable header with navigation & logo
-├── pages/
-│   └── index.js          # Main landing page
-├── public/
-│   └── logo.png          # Brand logo
-├── styles/
-│   └── globals.css       # Tailwind base styles
-├── tailwind.config.js    # Tailwind config
-├── postcss.config.js     # PostCSS config
-└── README.md             # You're here!
+|-- .gitignore
+|-- eslint.config.mjs
+|-- next-env.d.ts
+|-- next.config.ts
+|-- package-lock.json
+|-- package.json
+|-- postcss.config.mjs
+|-- public
+    |-- analytics.svg
+    |-- file.svg
+    |-- globe.svg
+    |-- logo.svg
+    |-- next.svg
+    |-- testimonials_images
+        |-- jane.png
+        |-- mike.png
+        |-- sofia.png
+    |-- vercel.svg
+    |-- window.svg
+|-- README.md
+|-- src
+    |-- app
+        |-- favicon.ico
+        |-- layout.tsx
+        |-- page.tsx
+    |-- components
+        |-- layout
+            |-- Container.tsx
+            |-- Footer.tsx
+            |-- Header.tsx
+        |-- sections
+            |-- ContactForm.tsx
+            |-- FAQ.tsx
+            |-- Features.tsx
+            |-- Hero.tsx
+            |-- Pricing.tsx
+            |-- Testimonials.tsx
+        |-- ui
+            |-- Accordian.tsx
+            |-- Button.tsx
+            |-- Card.tsx
+            |-- Carousel.tsx
+            |-- Input.tsx
+            |-- Modal.tsx
+    |-- styles
+        |-- globals.css
+    |-- types
+        |-- heroicons.d.ts
+|-- tsconfig.json
+
 ```
 
 ---
