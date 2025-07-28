@@ -50,7 +50,7 @@ export default function PricingSection() {
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1 }}
-              className={`rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur-md shadow-xl hover:shadow-2xl transition-all ${
+              className={`rounded-3xl border border-white/10 bg-[#191919] p-8 backdrop-blur-md shadow-xl hover:shadow-2xl transition-all ${
                 plan.highlighted
                   ? 'border-2 border-purple-500/50 bg-purple-500/5'
                   : ''

@@ -51,7 +51,7 @@ export default function TestimonialCarousel() {
             transition={{ duration: 0.6 }}
             className="bg-gray-800 rounded-2xl p-8 shadow-xl"
           >
-            <div className="flex flex-col items-center gap-4">
+            <div className="flex flex-col items-center gap-4 md:w-[80%] mx-auto">
               <Image width={100} height={40}
                 src={testimonials[current].image}
                 alt={testimonials[current].name}
@@ -63,15 +63,15 @@ export default function TestimonialCarousel() {
             </div>
           </motion.div>
 
-          <div className="absolute top-1/2 -left-6 transform -translate-y-1/2">
+          <div className="absolute top-1/2 left-10 transform -translate-y-1/2">
             <button onClick={prev}>
-              <ChevronLeft className="w-6 h-6 text-white hover:text-indigo-400" />
+              <ChevronLeft className="w-6 h-6 text-white hover:text-indigo-400 cursor-pointer" />
             </button>
           </div>
 
-          <div className="absolute top-1/2 -right-6 transform -translate-y-1/2">
+          <div className="absolute top-1/2 right-10 transform -translate-y-1/2">
             <button onClick={next}>
-              <ChevronRight className="w-6 h-6 text-white hover:text-indigo-400" />
+              <ChevronRight className="w-6 h-6 text-white hover:text-indigo-400 cursor-pointer" />
             </button>
           </div>
         </div>

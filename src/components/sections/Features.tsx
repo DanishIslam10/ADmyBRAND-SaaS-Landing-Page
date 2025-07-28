@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { RocketIcon, BarChart3Icon, Layers3Icon, ClockIcon, UsersIcon, ZapIcon } from 'lucide-react'
+import { useEffect, useRef } from 'react';
 
 const features = [
   {
@@ -37,8 +38,40 @@ const features = [
 ]
 
 export default function Features() {
+  const cardRefs = useRef<HTMLDivElement[]>([]);
+
+  useEffect(() => {
+    cardRefs.current.forEach((card) => {
+      const handleMouseMove = (e: MouseEvent) => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+
+        // Increase sensitivity
+        const rotateX = ((y - centerY) / centerY) * -15;
+        const rotateY = ((x - centerX) / centerX) * 15;
+
+        card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+      };
+
+      const handleMouseLeave = () => {
+        card.style.transform = `rotateX(0deg) rotateY(0deg)`;
+      };
+
+      card.addEventListener('mousemove', handleMouseMove);
+      card.addEventListener('mouseleave', handleMouseLeave);
+
+      return () => {
+        card.removeEventListener('mousemove', handleMouseMove);
+        card.removeEventListener('mouseleave', handleMouseLeave);
+      };
+    });
+  }, []);
+
   return (
-    <section className="relative py-24 bg-slate-900 text-white px-6">
+    <section className="relative py-24 bg-[#f2f2f2] text-[#3e3e3e] px-6">
       <div className="max-w-6xl mx-auto text-center mb-16">
         <motion.h2
           initial={{ opacity: 0, y: -20 }}
@@ -54,25 +87,31 @@ export default function Features() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2, duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-gray-400 max-w-xl mx-auto"
+          className="text-[gray] max-w-xl mx-auto"
         >
           Ad My Brand gives you powerful tools to launch, manage, and optimize your ad campaigns — all in one platform.
         </motion.p>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+      {/* Add perspective container */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto perspective-[1200px]">
         {features.map((feature, index) => (
           <motion.div
             key={index}
+            ref={(el) => (cardRefs.current[index] = el!)}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: index * 0.1, duration: 0.5 }}
             viewport={{ once: true }}
-            className="bg-white/5 border border-white/10 rounded-xl p-6 backdrop-blur-md shadow-lg hover:shadow-xl transition"
+            className="bg-white border border-white/20 rounded-xl p-6 backdrop-blur-lg shadow-lg hover:shadow-2xl transition-transform duration-300 transform-style-3d will-change-transform"
+            style={{
+              transformStyle: 'preserve-3d',
+              transition: 'transform 0.2s ease',
+            }}
           >
-            <div className="mb-4">{feature.icon}</div>
+            <div className="mb-4 text-3xl">{feature.icon}</div>
             <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>
-            <p className="text-sm text-gray-300">{feature.description}</p>
+            <p className="text-sm text-[#767676]">{feature.description}</p>
           </motion.div>
         ))}
       </div>
