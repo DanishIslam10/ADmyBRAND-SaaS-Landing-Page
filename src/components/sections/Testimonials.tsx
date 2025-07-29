@@ -63,13 +63,13 @@ export default function TestimonialCarousel() {
             </div>
           </motion.div>
 
-          <div className="absolute top-1/2 left-10 transform -translate-y-1/2">
+          <div className="absolute top-1/2 md:left-10 transform -translate-y-1/2">
             <button onClick={prev}>
               <ChevronLeft className="w-6 h-6 text-white hover:text-indigo-400 cursor-pointer" />
             </button>
           </div>
 
-          <div className="absolute top-1/2 right-10 transform -translate-y-1/2">
+          <div className="absolute top-1/2 md:right-10 right-0 transform -translate-y-1/2">
             <button onClick={next}>
               <ChevronRight className="w-6 h-6 text-white hover:text-indigo-400 cursor-pointer" />
             </button>
